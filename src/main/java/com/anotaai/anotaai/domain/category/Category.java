@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Document(collation = "categories")
+@Document("categories")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,6 +21,13 @@ public class Category {
     private String description;
 
     private String ownerId;
+
+
+    public Category (CategoryDTO data){
+        this.title = data.title();
+        this.description = data.description();
+        this.ownerId = data.ownerId();
+    }
 
 
 }
