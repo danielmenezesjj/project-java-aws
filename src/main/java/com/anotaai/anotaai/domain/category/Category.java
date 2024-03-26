@@ -29,5 +29,14 @@ public class Category {
         this.ownerId = data.ownerId();
     }
 
+    public void update(CategoryDTO dto){
+        if(dto.title() != null){
+            this.title = dto.title();
+        }
+        if(dto.description() != null){
+            this.description = dto.description();
+        }
+    }
+
 
 }
